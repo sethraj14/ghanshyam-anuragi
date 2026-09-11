@@ -62,3 +62,24 @@ Rajdeep delegated the pick this session ("you can be the designer… I can revie
 - Accessibility: focus rings visible, Hindi `lang="hi"`, alt text from captions where they exist, otherwise decorative.
 - Motion: CSS only; `prefers-reduced-motion` disables the load choreography and scroll-snap smoothness.
 - Non-goals as above.
+
+## Evidence (2026-09-11, built output via `astro preview`, Lighthouse 12 mobile preset, M-series Mac with other work running)
+
+| Route | Perf | A11y | BP | SEO | LCP | Page weight |
+|---|---|---|---|---|---|---|
+| `/` (3 runs) | 77 / 82 / 92 | 100 | 100 | 100 | 3.3–4.8 s | 740 KiB |
+| `/about` | 100 | 100 | 100 | 100 | 1.5 s | 410 KiB |
+| `/gallery` | 98 | 100 | 100 | 100 | 2.4 s | 2,046 KiB |
+| `/videos` | 100 | 100 | 100 | 100 | 1.8 s | 899 KiB |
+| `/media` | 97 | 100 | 100 | 100 | 2.4 s | 807 KiB |
+| `/apni-rasoi` | 85 | 100 | 100 | 100 | 4.0 s | 524 KiB |
+| `/contact` | 87 | 100 | 100 | 100 | 3.2 s | 383 KiB |
+
+Home run-to-run spread is the machine, not the page (FCP 0.8–3.3 s on an identical build). Re-measure on Vercel before reading more into it. Known: Apni Rasoi CLS 0.09 is the Devanagari font swap reflowing the text block.
+
+Screenshots at 390 and 1280: `evidence/`. Old Gatsby build for comparison: Wayback 2023-01-26 and the `feat/static-content` branch.
+
+## Cut on purpose
+- Twitter timeline and embedsocial iframes (third-party, slow, accounts unverified).
+- Terms / Privacy pages: never archived, nothing to restore.
+- Footer credit "Social The VPM" replaced with the person's own name; agency credit can return if wanted.

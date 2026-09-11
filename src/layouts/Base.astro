@@ -2,6 +2,8 @@
 import "../styles/global.css";
 import { nav, person, socials, contact } from "../data/site";
 import Social from "../components/Social.astro";
+import martel800 from "@fontsource/martel/files/martel-devanagari-800-normal.woff2?url";
+import mukta400 from "@fontsource/mukta/files/mukta-devanagari-400-normal.woff2?url";
 
 interface Props {
   title?: string;
@@ -25,6 +27,9 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
     <meta property="og:image" content={new URL("/og.jpg", Astro.site)} />
     <meta name="theme-color" content="#f26b1d" />
     <link rel="icon" href="/favicon.png" type="image/png" />
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
+    <link rel="preload" as="font" type="font/woff2" href={martel800} crossorigin />
+    <link rel="preload" as="font" type="font/woff2" href={mukta400} crossorigin />
   </head>
   <body class:list={["min-h-dvh flex flex-col", sky && "sky"]}>
     <header class="sticky top-0 z-20 bg-paper/85 backdrop-blur border-b border-ink/10">
@@ -38,7 +43,7 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
             <a
               href={item.href}
               aria-current={path === item.href ? "page" : undefined}
-              class="inline-flex items-center h-14 px-3 text-base font-medium text-ink-2 border-b-2 border-transparent aria-[current=page]:text-saffron-deep aria-[current=page]:border-saffron"
+              class="inline-flex items-center h-14 px-3 text-base font-semibold text-ink-2 border-b-2 border-transparent aria-[current=page]:text-saffron-deep aria-[current=page]:border-saffron"
             >{item.label}</a>
           ))}
         </nav>
