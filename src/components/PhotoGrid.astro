@@ -1,0 +1,27 @@
+---
+import { Image } from "astro:assets";
+import type { ImageMetadata } from "astro";
+
+interface Props {
+  images: ImageMetadata[];
+  columns?: string;
+  eager?: number;
+}
+const { images, columns = "columns-2 sm:columns-3 lg:columns-4", eager = 0 } = Astro.props;
+---
+<div class:list={[columns, "gap-3 [&>*]:mb-3"]}>
+  {images.map((img, i) => (
+    <a href={img.src} aria-label="तस्वीर बड़ी देखें" class="lift block break-inside-avoid rounded-xl overflow-hidden bg-paper-2" data-photo>
+      <Image
+        src={img}
+        alt=""
+        quality={65}
+        widths={[360, 640, 900]}
+        sizes="(min-width: 1024px) 25vw, (min-width: 640px) 33vw, 50vw"
+        loading={i < eager ? "eager" : "lazy"}
+        class="w-full h-auto"
+      />
+    </a>
+  ))}
+</div>
+

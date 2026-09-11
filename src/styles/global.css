@@ -1,0 +1,105 @@
+@import "tailwindcss";
+@import "@fontsource/martel/devanagari-700.css";
+@import "@fontsource/martel/devanagari-800.css";
+@import "@fontsource/martel/latin-700.css";
+@import "@fontsource/martel/latin-800.css";
+@import "@fontsource/mukta/devanagari-400.css";
+@import "@fontsource/mukta/devanagari-600.css";
+@import "@fontsource/mukta/latin-400.css";
+@import "@fontsource/mukta/latin-600.css";
+
+@theme {
+  --color-paper: #fbf7f0;
+  --color-paper-2: #f3ece0;
+  --color-ink: #1b1a17;
+  --color-ink-2: #5a544a;
+  --color-saffron: #f26b1d;
+  --color-saffron-deep: #b8430f;
+  --color-green: #1e7a4c;
+  --color-gold: #d9a441;
+  --font-display: "Martel", "Noto Serif Devanagari", Georgia, serif;
+  --font-body: "Mukta", "Noto Sans Devanagari", system-ui, sans-serif;
+}
+
+html {
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-body);
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  line-height: 1.7;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  line-height: 1.25;
+  text-wrap: balance;
+}
+
+:focus-visible {
+  outline: 3px solid var(--color-saffron);
+  outline-offset: 3px;
+}
+
+/* One page-load choreography for the Home hero. */
+.rise { animation: rise 0.9s cubic-bezier(0.2, 0.7, 0.2, 1) both; }
+.rise-2 { animation-delay: 0.12s; }
+.rise-3 { animation-delay: 0.24s; }
+.rise-4 { animation-delay: 0.36s; }
+.bloom { animation: bloom 1.6s ease-out both; }
+
+@keyframes rise {
+  from { opacity: 0; transform: translateY(18px); }
+  to { opacity: 1; transform: none; }
+}
+@keyframes bloom {
+  from { opacity: 0; transform: scale(0.8); }
+  to { opacity: 1; transform: none; }
+}
+
+/* Scroll reveals: hidden until the observer adds .in; children stagger. */
+.reveal { opacity: 0; transform: translateY(22px); transition: opacity 0.7s ease-out, transform 0.7s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.reveal.in { opacity: 1; transform: none; }
+.stagger > * { opacity: 0; transform: translateY(16px); transition: opacity 0.6s ease-out, transform 0.6s cubic-bezier(0.2, 0.7, 0.2, 1); }
+.stagger.in > * { opacity: 1; transform: none; }
+.stagger.in > :nth-child(2) { transition-delay: 0.08s; }
+.stagger.in > :nth-child(3) { transition-delay: 0.16s; }
+.stagger.in > :nth-child(4) { transition-delay: 0.24s; }
+.stagger.in > :nth-child(5) { transition-delay: 0.32s; }
+.stagger.in > :nth-child(6) { transition-delay: 0.4s; }
+.stagger.in > :nth-child(n + 7) { transition-delay: 0.48s; }
+
+/* Hero portrait drifts up slower than the page (scroll-driven, no JS). */
+@supports (animation-timeline: scroll()) {
+  .parallax { animation: drift linear both; animation-timeline: scroll(); animation-range: 0 60vh; }
+  .parallax-slow { animation: drift-slow linear both; animation-timeline: scroll(); animation-range: 0 60vh; }
+}
+@keyframes drift { to { transform: translateY(-48px); } }
+@keyframes drift-slow { to { transform: translateY(24px) scale(1.06); } }
+
+/* Timeline rail draws as it enters the viewport. */
+.rail::before { content: ""; position: absolute; left: -2px; top: 0; bottom: 0; width: 2px; background: var(--color-saffron); transform-origin: top; transform: scaleY(0); transition: transform 1.2s ease-out; }
+.rail.in::before { transform: scaleY(1); }
+
+/* Header gains a shadow once the page has scrolled. */
+header[data-scrolled="true"] { box-shadow: 0 6px 24px -12px rgb(27 26 23 / 0.25); }
+
+/* Lift on hover for tiles. */
+.lift { transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.2, 1), box-shadow 0.35s ease; }
+.lift:hover { transform: translateY(-4px); box-shadow: 0 18px 40px -20px rgb(242 107 29 / 0.5); }
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .rise, .bloom, .parallax, .parallax-slow { animation: none; }
+  .reveal, .stagger > *, .rail::before { opacity: 1; transform: none; transition: none; }
+  .lift:hover { transform: none; }
+}
+
+/* Long-form Hindi */
+.prose-hi p { margin: 0 0 1.25em; }
+.prose-hi ul { margin: 0 0 1.25em; padding-left: 1.25em; }
+.prose-hi li { margin: 0.35em 0; }

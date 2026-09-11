@@ -1,0 +1,19 @@
+---
+interface Props { name: keyof typeof paths; class?: string; size?: number }
+const { name, class: cls = "", size = 20 } = Astro.props;
+const paths = {
+  phone: "M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z",
+  mail: "M4 6h16v12H4zM4 7l8 6 8-6",
+  pin: "M12 21s-7-6.2-7-11a7 7 0 0 1 14 0c0 4.8-7 11-7 11zM12 12a2 2 0 1 0 0-4 2 2 0 0 0 0 4z",
+  camera: "M4 8h3l2-3h6l2 3h3v11H4zM12 17a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7z",
+  play: "M8 5v14l11-7z",
+  news: "M4 5h13v14H6a2 2 0 0 1-2-2zM17 9h3v8a2 2 0 0 1-2 2M7 9h6M7 13h6M7 17h4",
+  food: "M6 3v8M9 3v8M7.5 11v10M6 3v5a1.5 1.5 0 0 0 3 0V3M17 3c-2 0-3 3-3 6v3h3v9",
+  flag: "M5 21V4M5 4h11l-2 4 2 4H5",
+  people: "M9 12a3.5 3.5 0 1 0 0-7 3.5 3.5 0 0 0 0 7zM3 20a6 6 0 0 1 12 0M16 5a3 3 0 0 1 0 6M21 20a5 5 0 0 0-4-5",
+  arrow: "M5 12h14M13 6l6 6-6 6",
+};
+---
+<svg width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" class={cls} aria-hidden="true">
+  <path d={paths[name]} />
+</svg>
