@@ -7,13 +7,13 @@ const { ids, eager = 3 } = Astro.props;
 
 const frames = import.meta.glob<ImageMetadata>("../assets/posters/*.jpg", { eager: true, import: "default" });
 ---
-<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+<div class="stagger grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
   {ids.map((n, i) => (
     <button
       type="button"
       data-video={videoSrc(n)}
       aria-label="वीडियो चलाएँ"
-      class="group relative block w-full aspect-video rounded-xl overflow-hidden bg-ink"
+      class="lift group relative block w-full aspect-video rounded-xl overflow-hidden bg-ink"
     >
       <Image
         src={frames[`../assets/posters/${n}.jpg`]}

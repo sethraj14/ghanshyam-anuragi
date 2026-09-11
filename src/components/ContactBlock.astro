@@ -1,17 +1,19 @@
 ---
+import Icon from "./Icon.astro";
 import { contact } from "../data/site";
+const cards = [
+  { icon: "pin", title: "पता", body: contact.address, href: contact.mapUrl, external: true },
+  { icon: "phone", title: "फ़ोन", body: contact.phone, href: contact.phoneHref, strong: true },
+  { icon: "mail", title: "ईमेल", body: contact.email, href: `mailto:${contact.email}` },
+] as const;
 ---
-<div class="grid gap-6 sm:grid-cols-3">
-  <a href={contact.mapUrl} target="_blank" rel="noopener" class="block rounded-2xl bg-white/70 border border-ink/10 p-5">
-    <p class="font-display font-bold text-lg">पता</p>
-    <p class="mt-1 text-ink-2 leading-relaxed">{contact.address}</p>
-  </a>
-  <a href={contact.phoneHref} class="block rounded-2xl bg-white/70 border border-ink/10 p-5">
-    <p class="font-display font-bold text-lg">फ़ोन</p>
-    <p class="mt-1 text-saffron-deep text-xl font-semibold">{contact.phone}</p>
-  </a>
-  <a href={`mailto:${contact.email}`} class="block rounded-2xl bg-white/70 border border-ink/10 p-5">
-    <p class="font-display font-bold text-lg">ईमेल</p>
-    <p class="mt-1 text-ink-2 break-all">{contact.email}</p>
-  </a>
+<div class="stagger grid gap-4 sm:grid-cols-3">
+  {cards.map((c) => (
+    <a href={c.href} target={"external" in c ? "_blank" : undefined} rel={"external" in c ? "noopener" : undefined}
+      class="lift block rounded-2xl bg-white/70 border border-ink/10 p-5">
+      <span class="grid place-items-center h-11 w-11 rounded-full bg-saffron/15 text-saffron-deep"><Icon name={c.icon} size={22} /></span>
+      <p class="mt-4 font-display font-bold text-lg">{c.title}</p>
+      <p class:list={["mt-1 leading-relaxed break-words", "strong" in c ? "text-saffron-deep text-xl font-semibold" : "text-ink-2"]}>{c.body}</p>
+    </a>
+  ))}
 </div>

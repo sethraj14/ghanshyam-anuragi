@@ -46,10 +46,20 @@ export const timeline = [
   { year: 2021, text: "मनोनीत कार्यकारी राष्ट्रीय अध्यक्ष, अखिल भारतीय कोली (कोरी) समाज" },
 ];
 
+// Gallery photos where he appears with party and national leaders (picked by eye from the 129 gallery shots).
+export const leaders = [
+  { photo: 87, caption: "प्रधानमंत्री नरेंद्र मोदी के साथ, बुंदेलखंड एक्सप्रेसवे" },
+  { photo: 19, caption: "मुख्यमंत्री योगी आदित्यनाथ के साथ, जनसभा" },
+  { photo: 91, caption: "राष्ट्रीय अध्यक्ष जे. पी. नड्डा के साथ" },
+  { photo: 8, caption: "रक्षा मंत्री राजनाथ सिंह के साथ" },
+  { photo: 103, caption: "पूर्व राष्ट्रपति रामनाथ कोविंद के साथ" },
+  { photo: 105, caption: "उप-मुख्यमंत्री केशव प्रसाद मौर्य, अपनी रसोई में" },
+];
+
 // Three facts from the biography text, nothing invented.
-export const facts = [
+export const facts: { value: string; label: string; count?: number; suffix?: string }[] = [
   { value: "1995 से", label: "जन प्रतिनिधि" },
-  { value: "800–900", label: "लोगों को रोज़ भोजन, अपनी रसोई" },
+  { value: "800+", count: 800, suffix: "+", label: "लोगों को रोज़ भोजन, अपनी रसोई" },
   { value: "2022", label: "पं. दीनदयाल उपाध्याय राष्ट्रीय पुरस्कार" },
 ];
 

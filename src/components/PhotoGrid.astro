@@ -11,7 +11,7 @@ const { images, columns = "columns-2 sm:columns-3 lg:columns-4", eager = 0 } = A
 ---
 <div class:list={[columns, "gap-3 [&>*]:mb-3"]}>
   {images.map((img, i) => (
-    <a href={img.src} aria-label="तस्वीर बड़ी देखें" class="block break-inside-avoid rounded-xl overflow-hidden bg-paper-2" data-photo>
+    <a href={img.src} aria-label="तस्वीर बड़ी देखें" class="lift block break-inside-avoid rounded-xl overflow-hidden bg-paper-2" data-photo>
       <Image
         src={img}
         alt=""

@@ -83,3 +83,9 @@ Screenshots at 390 and 1280: `evidence/`. Old Gatsby build for comparison: Wayba
 - Twitter timeline and embedsocial iframes (third-party, slow, accounts unverified).
 - Terms / Privacy pages: never archived, nothing to restore.
 - Footer credit "Social The VPM" replaced with the person's own name; agency credit can return if wanted.
+
+## Pass 3 (2026-09-11, Rajdeep's review notes)
+- Lotus restored: header mark, hero party pill, footer, SVG favicon. It was the old `brand-logo.js` inline SVG, lost when the header took the face favicon.
+- "नेतृत्व के साथ": six gallery photos with party and national leaders (gallery 87, 19, 91, 8, 103, 105), captions written from what is visible; names to be confirmed by Rajdeep.
+- Motion added on request: scroll reveals with stagger (IntersectionObserver, once), hero portrait parallax (CSS scroll-driven animation, no JS, Chrome/Edge; others see the static hero), timeline rail draws in, 800+ counter, header shadow after scroll, lift on tiles. All off under reduced motion.
+- Icons: hand-drawn 24px stroke set in `Icon.astro` on section heads, contact cards and the Apni Rasoi link.
