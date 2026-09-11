@@ -1,0 +1,47 @@
+---
+import { Image } from "astro:assets";
+import { videoSrc } from "../data/site";
+
+interface Props { ids: number[]; eager?: number }
+const { ids, eager = 3 } = Astro.props;
+
+const frames = import.meta.glob<ImageMetadata>("../assets/posters/*.jpg", { eager: true, import: "default" });
+---
+<div class="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+  {ids.map((n, i) => (
+    <button
+      type="button"
+      data-video={videoSrc(n)}
+      aria-label="वीडियो चलाएँ"
+      class="group relative block w-full aspect-video rounded-xl overflow-hidden bg-ink"
+    >
+      <Image
+        src={frames[`../assets/posters/${n}.jpg`]}
+        alt=""
+        width={640}
+        quality={60}
+        loading={i < eager ? "eager" : "lazy"}
+        class="absolute inset-0 w-full h-full object-cover"
+      />
+      <span class="absolute inset-0 grid place-items-center">
+        <span class="grid place-items-center h-14 w-14 rounded-full bg-paper/90 text-saffron-deep shadow-lg group-hover:bg-paper">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+        </span>
+      </span>
+    </button>
+  ))}
+</div>
+
+<script>
+  document.querySelectorAll<HTMLButtonElement>("[data-video]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const v = document.createElement("video");
+      v.src = btn.dataset.video!;
+      v.controls = true;
+      v.autoplay = true;
+      v.playsInline = true;
+      v.className = btn.className;
+      btn.replaceWith(v);
+    }, { once: true });
+  });
+</script>

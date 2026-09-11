@@ -1,0 +1,12 @@
+---
+import Base from "../layouts/Base.astro";
+import VideoGrid from "../components/VideoGrid.astro";
+import { allVideos } from "../data/site";
+---
+
+<Base title="वीडियो">
+  <section class="mx-auto max-w-6xl px-4 pt-8">
+    <h1 class="text-3xl sm:text-4xl font-extrabold mb-6">वीडियो</h1>
+    <VideoGrid ids={allVideos} />
+  </section>
+</Base>

@@ -1,0 +1,17 @@
+---
+import { contact } from "../data/site";
+---
+<div class="grid gap-6 sm:grid-cols-3">
+  <a href={contact.mapUrl} target="_blank" rel="noopener" class="block rounded-2xl bg-white/70 border border-ink/10 p-5">
+    <p class="font-display font-bold text-lg">पता</p>
+    <p class="mt-1 text-ink-2 leading-relaxed">{contact.address}</p>
+  </a>
+  <a href={contact.phoneHref} class="block rounded-2xl bg-white/70 border border-ink/10 p-5">
+    <p class="font-display font-bold text-lg">फ़ोन</p>
+    <p class="mt-1 text-saffron-deep text-xl font-semibold">{contact.phone}</p>
+  </a>
+  <a href={`mailto:${contact.email}`} class="block rounded-2xl bg-white/70 border border-ink/10 p-5">
+    <p class="font-display font-bold text-lg">ईमेल</p>
+    <p class="mt-1 text-ink-2 break-all">{contact.email}</p>
+  </a>
+</div>

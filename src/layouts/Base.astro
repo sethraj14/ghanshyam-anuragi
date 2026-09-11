@@ -1,0 +1,118 @@
+---
+import "../styles/global.css";
+import { nav, person, socials, contact } from "../data/site";
+import Social from "../components/Social.astro";
+
+interface Props {
+  title?: string;
+  description?: string;
+  sky?: boolean;
+}
+const { title, description = person.description, sky = false } = Astro.props;
+const fullTitle = title ? `${title} · ${person.name}` : person.title;
+const path = Astro.url.pathname.replace(/\/$/, "") || "/";
+---
+
+<!doctype html>
+<html lang="hi">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={new URL("/og.jpg", Astro.site)} />
+    <meta name="theme-color" content="#f26b1d" />
+    <link rel="icon" href="/favicon.png" type="image/png" />
+  </head>
+  <body class:list={["min-h-dvh flex flex-col", sky && "sky"]}>
+    <header class="sticky top-0 z-20 bg-paper/85 backdrop-blur border-b border-ink/10">
+      <div class="mx-auto max-w-6xl px-4 flex items-center gap-3 h-14">
+        <a href="/" class="flex items-center gap-2 shrink-0" aria-label="होम">
+          <img src="/favicon.png" alt="" width="32" height="32" class="h-8 w-8" />
+          <span class="font-display font-bold text-base leading-none hidden sm:inline">{person.name}</span>
+        </a>
+        <nav class="ml-auto -mr-4 pr-4 overflow-x-auto whitespace-nowrap [scrollbar-width:none]" aria-label="मुख्य">
+          {nav.map((item) => (
+            <a
+              href={item.href}
+              aria-current={path === item.href ? "page" : undefined}
+              class="inline-flex items-center h-14 px-3 text-base font-medium text-ink-2 border-b-2 border-transparent aria-[current=page]:text-saffron-deep aria-[current=page]:border-saffron"
+            >{item.label}</a>
+          ))}
+        </nav>
+      </div>
+    </header>
+
+    <main class="flex-1"><slot /></main>
+
+    <dialog id="lightbox" class="m-auto p-0 bg-transparent backdrop:bg-ink/90">
+      <img alt="" class="rounded-lg" />
+    </dialog>
+
+    <footer class="mt-16">
+      <div class="h-1 flex" aria-hidden="true">
+        <span class="flex-1 bg-saffron"></span><span class="flex-1 bg-white"></span><span class="flex-1 bg-green"></span>
+      </div>
+      <div class="bg-paper-2">
+        <div class="mx-auto max-w-6xl px-4 py-10 grid gap-8 sm:grid-cols-[1fr_auto] items-start">
+          <div>
+            <p class="font-display font-bold text-xl">{person.name}</p>
+            <p class="text-ink-2 mt-1">{person.roles.join(" · ")}</p>
+            <a href={contact.phoneHref} class="inline-block mt-3 text-saffron-deep font-semibold">{contact.phone}</a>
+          </div>
+          <ul class="flex gap-3" aria-label="सोशल मीडिया">
+            {socials.map((s) => (
+              <li>
+                <a href={s.href} target="_blank" rel="noopener" aria-label={s.label}
+                  class="grid place-items-center h-11 w-11 rounded-full bg-paper border border-ink/10 text-ink-2 hover:text-saffron-deep">
+                  <Social name={s.key} />
+                </a>
+              </li>
+            ))}
+          </ul>
+          <nav class="sm:col-span-2 flex flex-wrap gap-x-5 gap-y-2 text-base text-ink-2" aria-label="फ़ुटर">
+            {nav.map((item) => <a href={item.href}>{item.label}</a>)}
+          </nav>
+          <p class="sm:col-span-2 text-sm text-ink-2">© {new Date().getFullYear()} {person.name}</p>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
+
+<style>
+  .sky {
+    background:
+      radial-gradient(60% 40% at 50% 0%, rgba(242, 107, 29, 0.55), transparent 70%),
+      linear-gradient(180deg, #f9c9a6 0%, #fbf7f0 60vh);
+    position: relative;
+  }
+  /* Paper grain over the sky so the canvas is not a flat gradient. */
+  .sky::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    height: 60vh;
+    pointer-events: none;
+    opacity: 0.18;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+  #lightbox { max-width: 96vw; max-height: 96dvh; }
+  #lightbox img { max-width: 96vw; max-height: 96dvh; }
+  nav[aria-label="मुख्य"] { mask-image: linear-gradient(90deg, #000 85%, transparent); }
+</style>
+
+<script>
+  const box = document.getElementById("lightbox") as HTMLDialogElement;
+  const img = box.querySelector("img")!;
+  document.querySelectorAll<HTMLAnchorElement>("[data-photo]").forEach((a) => {
+    a.addEventListener("click", (e) => {
+      e.preventDefault();
+      img.src = a.href;
+      box.showModal();
+    });
+  });
+  box.addEventListener("click", () => box.close());
+</script>

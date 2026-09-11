@@ -1,0 +1,91 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import SectionHead from "../components/SectionHead.astro";
+import Timeline from "../components/Timeline.astro";
+import PhotoGrid from "../components/PhotoGrid.astro";
+import VideoGrid from "../components/VideoGrid.astro";
+import ContactBlock from "../components/ContactBlock.astro";
+import { person, contact, biography, rasoi, homeVideos, galleryList, mediaList } from "../data/site";
+import hero from "../assets/bio-1.png";
+import portraitBio from "../assets/portrait-bio.png";
+import rasoiPhoto from "../assets/rasoi_6.jpg";
+
+const gallery = import.meta.glob<ImageMetadata>("../assets/gallery/*.jpg", { eager: true, import: "default" });
+const media = import.meta.glob<ImageMetadata>("../assets/media/*.jpg", { eager: true, import: "default" });
+const pick = (list: { src: string }[], all: Record<string, ImageMetadata>, n: number) =>
+  list.slice(0, n).map((p) => all[`../assets${p.src.replace("/images", "")}`]).filter(Boolean);
+---
+
+<Base sky>
+  <section class="relative mx-auto max-w-6xl px-4 pt-6 sm:pt-16 grid gap-6 sm:grid-cols-2 sm:items-end border-b border-saffron/30">
+    <div class="relative order-first sm:order-last justify-self-center flex items-end">
+      <span class="bloom absolute inset-x-4 top-10 bottom-6 rounded-full bg-saffron/50 blur-3xl" aria-hidden="true"></span>
+      <Image
+        src={hero}
+        alt={person.name}
+        widths={[360, 560, 900]}
+        sizes="(min-width: 1024px) 28rem, (min-width: 640px) 40vw, 70vw"
+        loading="eager"
+        fetchpriority="high"
+        class="rise relative w-56 sm:w-sm lg:w-md h-auto drop-shadow-2xl"
+      />
+    </div>
+    <div class="text-center sm:text-left pb-10 sm:pb-20">
+      <h1 class="rise rise-2 text-4xl sm:text-5xl lg:text-7xl font-extrabold text-ink">{person.name}</h1>
+      <p class="rise rise-3 mt-3 text-xl sm:text-2xl font-display font-bold text-saffron-deep">{person.roles[0]}</p>
+      <p class="rise rise-3 text-xl sm:text-2xl font-display font-bold text-ink">{person.roles[1]}</p>
+      <div class="rise rise-4 mt-7 flex flex-wrap justify-center sm:justify-start gap-3">
+        <a href={contact.phoneHref} class="inline-flex items-center h-12 px-6 rounded-full bg-saffron text-white font-semibold text-lg shadow-lg shadow-saffron/30">फ़ोन करें</a>
+        <a href="/about" class="inline-flex items-center h-12 px-6 rounded-full border-2 border-ink/15 bg-white/60 font-semibold text-lg">जीवनी पढ़ें</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-10">
+    <div class="rounded-3xl bg-white/80 border border-ink/10 p-6 sm:p-10 grid gap-6 sm:grid-cols-[1fr_260px] items-center">
+      <div>
+        <h2 class="text-2xl sm:text-3xl font-extrabold">{biography[0][0]}</h2>
+        <p class="mt-4 text-lg leading-relaxed text-ink-2">{biography[1][0]}</p>
+        <a href="/about" class="inline-flex items-center h-11 mt-5 px-5 rounded-full bg-saffron text-white font-semibold">पूरी जीवनी</a>
+      </div>
+      <Image src={portraitBio} alt="" widths={[260, 520]} sizes="260px" class="w-40 sm:w-full h-auto justify-self-center rounded-2xl" />
+    </div>
+  </section>
+
+  <section class="mx-auto max-w-3xl px-4 py-10">
+    <SectionHead title="राजनीतिक यात्रा" />
+    <Timeline />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-10">
+    <a href="/apni-rasoi" class="grid gap-0 sm:grid-cols-2 rounded-3xl overflow-hidden bg-ink text-paper">
+      <Image src={rasoiPhoto} alt="अपनी रसोई में भोजन" widths={[480, 960]} sizes="(min-width: 640px) 50vw, 100vw" class="w-full h-full object-cover aspect-[4/3] sm:aspect-auto" />
+      <div class="p-6 sm:p-10 flex flex-col justify-center">
+        <p class="font-display font-bold text-2xl sm:text-3xl leading-snug">{rasoi.slogan[0]}<br />{rasoi.slogan[1]}</p>
+        <p class="mt-4 text-paper/80 text-lg">अपनी रसोई: भारत जन सेवा फाउंडेशन के माध्यम से प्रतिदिन 800 से 900 लोगों को ₹5 में भरपेट भोजन।</p>
+        <span class="mt-5 text-gold font-semibold">अपनी रसोई के बारे में</span>
+      </div>
+    </a>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-10">
+    <SectionHead title="तस्वीरें" href="/gallery" />
+    <PhotoGrid images={pick(galleryList, gallery, 6)} columns="columns-2 sm:columns-3" />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-10">
+    <SectionHead title="वीडियो" href="/videos" />
+    <VideoGrid ids={homeVideos} />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-10">
+    <SectionHead title="मीडिया में" href="/media" />
+    <PhotoGrid images={pick(mediaList, media, 3)} columns="columns-1 sm:columns-3" />
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-10">
+    <SectionHead title="संपर्क" />
+    <ContactBlock />
+  </section>
+</Base>

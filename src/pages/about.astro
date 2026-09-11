@@ -1,0 +1,37 @@
+---
+import { Image } from "astro:assets";
+import Base from "../layouts/Base.astro";
+import Timeline from "../components/Timeline.astro";
+import { person, biography } from "../data/site";
+import portrait from "../assets/portrait-mic.png";
+
+const [heading, ...paras] = biography;
+---
+
+<Base title="जीवनी" sky>
+  <article class="mx-auto max-w-3xl px-4 pt-8 pb-12">
+    <header class="grid gap-6 sm:grid-cols-[1fr_200px] items-end">
+      <div>
+        <h1 class="text-4xl sm:text-5xl font-extrabold">{heading[0]}</h1>
+        <p class="mt-3 text-xl font-display font-bold text-saffron-deep">{person.name}</p>
+      </div>
+      <Image src={portrait} alt={person.name} widths={[200, 400]} sizes="200px" loading="eager" class="w-40 sm:w-full h-auto justify-self-center" />
+    </header>
+
+    <div class="prose-hi mt-10 text-lg leading-relaxed">
+      {paras.map((p) =>
+        p.length === 1 ? (
+          <p>{p[0]}</p>
+        ) : (
+          <>
+            <p>{p[0]}</p>
+            <ul>{p.slice(1).map((l) => <li>{l.replace(/^•\s*/, "")}</li>)}</ul>
+          </>
+        )
+      )}
+    </div>
+
+    <h2 class="text-2xl sm:text-3xl font-extrabold mt-14 mb-6">राजनीतिक यात्रा</h2>
+    <Timeline />
+  </article>
+</Base>
