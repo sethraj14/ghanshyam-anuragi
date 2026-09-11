@@ -25,9 +25,9 @@ import { theme } from "../theme.css"
 import { colors } from "../colors.css"
 
 const img1 =
-  "https://images.ctfassets.net/d5ql4rml3t6t/24pDVWYAGqV18dKDuEdFvb/e15ba713f75c597250652389bad7a78b/image_-_Edited.png?w=200&h=184&q=50&fm=png"
+  "/cms/image_-_Edited.png?w=200&h=184&q=50&fm=png"
 const img2 =
-  "https://images.ctfassets.net/d5ql4rml3t6t/U3SK6xjRhpQRa9vJy8nyM/88872623eaa0279f9897f332ed545e5f/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=205&h=242&q=50&fm=webp"
+  "/cms/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=205&h=242&q=50&fm=webp"
 
 export default function Hero(props) {
   return (

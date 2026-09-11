@@ -11,9 +11,8 @@ import {
   Text,
 } from "./ui"
 import { useBreakpoint } from "gatsby-plugin-breakpoints";
-import {MdLocationOn} from "react-icons/all";
-import {IoCall} from "react-icons/all";
-import {MdEmail} from "react-icons/all";
+import { MdLocationOn, MdEmail } from "react-icons/md";
+import { IoCall } from "react-icons/io5";
 import {colors} from "../colors.css";
 
 const contactDetails = [

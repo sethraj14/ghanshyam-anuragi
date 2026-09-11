@@ -22,7 +22,8 @@ import {
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Rasoi from "../components/custom/rasoi"
 import { colors } from "../colors.css"
-import { IoCall, MdEmail, MdLocationOn } from "react-icons/all"
+import { IoCall } from "react-icons/io5"
+import { MdEmail, MdLocationOn } from "react-icons/md"
 import { useBreakpoint } from "gatsby-plugin-breakpoints"
 import { Product } from "../components/cta"
 import Videos from "../components/custom/videos";
@@ -115,15 +116,15 @@ const image = {
       sources: [
         {
           srcSet:
-            "https://images.ctfassets.net/d5ql4rml3t6t/U3SK6xjRhpQRa9vJy8nyM/88872623eaa0279f9897f332ed545e5f/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=103&h=122&q=50&fm=webp 103w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/U3SK6xjRhpQRa9vJy8nyM/88872623eaa0279f9897f332ed545e5f/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=205&h=242&q=50&fm=webp 205w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/U3SK6xjRhpQRa9vJy8nyM/88872623eaa0279f9897f332ed545e5f/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=410&h=484&q=50&fm=webp 410w",
+            "/cms/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=103&h=122&q=50&fm=webp 103w,\n/cms/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=205&h=242&q=50&fm=webp 205w,\n/cms/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=410&h=484&q=50&fm=webp 410w",
           sizes: "(min-width: 410px) 410px, 100vw",
           type: "image/webp",
         },
       ],
       fallback: {
-        src: "https://images.ctfassets.net/d5ql4rml3t6t/U3SK6xjRhpQRa9vJy8nyM/88872623eaa0279f9897f332ed545e5f/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=410&h=484&q=50&fm=png",
+        src: "/cms/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=410&h=484&q=50&fm=png",
         srcSet:
-          "https://images.ctfassets.net/d5ql4rml3t6t/U3SK6xjRhpQRa9vJy8nyM/88872623eaa0279f9897f332ed545e5f/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=103&h=122&q=50&fm=png 103w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/U3SK6xjRhpQRa9vJy8nyM/88872623eaa0279f9897f332ed545e5f/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=205&h=242&q=50&fm=png 205w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/U3SK6xjRhpQRa9vJy8nyM/88872623eaa0279f9897f332ed545e5f/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=410&h=484&q=50&fm=png 410w",
+          "/cms/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=103&h=122&q=50&fm=png 103w,\n/cms/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=205&h=242&q=50&fm=png 205w,\n/cms/WhatsApp_Image_2022-12-15_at_9.37.51_PM_Background_Removed_-_Edited.png?w=410&h=484&q=50&fm=png 410w",
         sizes: "(min-width: 410px) 410px, 100vw",
       },
     },

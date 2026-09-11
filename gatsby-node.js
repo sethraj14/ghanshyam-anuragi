@@ -1,6 +1,21 @@
 const { documentToHtmlString } = require("@contentful/rich-text-html-renderer")
 const { getGatsbyImageResolver } = require("gatsby-plugin-image/graphql-utils")
 
+// Static replacement for gatsby-source-contentful: content/site.json holds
+// the nodes the Contentful space used to provide (see git history for the plugin).
+exports.sourceNodes = ({ actions, createContentDigest }) => {
+  const nodes = require("./content/site.json")
+  for (const { type, id, ...fields } of nodes) {
+    actions.createNode({
+      ...fields,
+      id,
+      parent: null,
+      children: [],
+      internal: { type, contentDigest: createContentDigest(fields) },
+    })
+  }
+}
+
 exports.createSchemaCustomization = async ({ actions }) => {
   actions.createFieldExtension({
     name: "blocktype",
@@ -372,7 +387,7 @@ exports.createSchemaCustomization = async ({ actions }) => {
     type ContentfulAsset implements Node & HomepageImage {
       id: ID!
       alt: String @proxy(from: "title")
-      gatsbyImageData: GatsbyImageData
+      gatsbyImageData: GatsbyImageData @imagePassthroughArgs
       url: String @imageUrl
       file: JSON
       title: String

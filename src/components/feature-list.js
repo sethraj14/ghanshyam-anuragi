@@ -54,14 +54,14 @@ const featuresList = [
         //         "images": {
         //             "sources": [
         //                 {
-        //                     "srcSet": "https://images.ctfassets.net/d5ql4rml3t6t/5ZkiE2jhld2iLz7VBmMEeX/808b52dde7f8d2a7873994d221055b84/Developer.png?w=592&h=444&q=50&fm=webp 592w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/5ZkiE2jhld2iLz7VBmMEeX/808b52dde7f8d2a7873994d221055b84/Developer.png?w=1184&h=888&q=50&fm=webp 1184w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/5ZkiE2jhld2iLz7VBmMEeX/808b52dde7f8d2a7873994d221055b84/Developer.png?w=2368&h=1776&q=50&fm=webp 2368w",
+        //                     "srcSet": "/cms/Developer.png?w=592&h=444&q=50&fm=webp 592w,\n/cms/Developer.png?w=1184&h=888&q=50&fm=webp 1184w,\n/cms/Developer.png?w=2368&h=1776&q=50&fm=webp 2368w",
         //                     "sizes": "(min-width: 2368px) 2368px, 100vw",
         //                     "type": "image/webp"
         //                 }
         //             ],
         //             "fallback": {
-        //                 "src": "https://images.ctfassets.net/d5ql4rml3t6t/5ZkiE2jhld2iLz7VBmMEeX/808b52dde7f8d2a7873994d221055b84/Developer.png?w=2368&h=1776&q=50&fm=png",
-        //                 "srcSet": "https://images.ctfassets.net/d5ql4rml3t6t/5ZkiE2jhld2iLz7VBmMEeX/808b52dde7f8d2a7873994d221055b84/Developer.png?w=592&h=444&q=50&fm=png 592w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/5ZkiE2jhld2iLz7VBmMEeX/808b52dde7f8d2a7873994d221055b84/Developer.png?w=1184&h=888&q=50&fm=png 1184w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/5ZkiE2jhld2iLz7VBmMEeX/808b52dde7f8d2a7873994d221055b84/Developer.png?w=2368&h=1776&q=50&fm=png 2368w",
+        //                 "src": "/cms/Developer.png?w=2368&h=1776&q=50&fm=png",
+        //                 "srcSet": "/cms/Developer.png?w=592&h=444&q=50&fm=png 592w,\n/cms/Developer.png?w=1184&h=888&q=50&fm=png 1184w,\n/cms/Developer.png?w=2368&h=1776&q=50&fm=png 2368w",
         //                 "sizes": "(min-width: 2368px) 2368px, 100vw"
         //             }
         //         },

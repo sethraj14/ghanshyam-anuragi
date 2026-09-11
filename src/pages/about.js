@@ -60,14 +60,14 @@ const img = {
         "images": {
             "sources": [
                 {
-                    "srcSet": "https://images.ctfassets.net/d5ql4rml3t6t/7nCV7i4NBQYcINf8sW3d25/cd2f76dda42c72a128548296c308432c/bio-1.png?w=607&h=990&q=50&fm=webp 607w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/7nCV7i4NBQYcINf8sW3d25/cd2f76dda42c72a128548296c308432c/bio-1.png?w=1215&h=1981&q=50&fm=webp 1215w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/7nCV7i4NBQYcINf8sW3d25/cd2f76dda42c72a128548296c308432c/bio-1.png?w=2429&h=3961&q=50&fm=webp 2429w",
+                    "srcSet": "/cms/bio-1.png?w=607&h=990&q=50&fm=webp 607w,\n/cms/bio-1.png?w=1215&h=1981&q=50&fm=webp 1215w,\n/cms/bio-1.png?w=2429&h=3961&q=50&fm=webp 2429w",
                     "sizes": "(min-width: 2429px) 2429px, 100vw",
                     "type": "image/webp"
                 }
             ],
             "fallback": {
-                "src": "https://images.ctfassets.net/d5ql4rml3t6t/7nCV7i4NBQYcINf8sW3d25/cd2f76dda42c72a128548296c308432c/bio-1.png?w=2429&h=3961&q=50&fm=png",
-                "srcSet": "https://images.ctfassets.net/d5ql4rml3t6t/7nCV7i4NBQYcINf8sW3d25/cd2f76dda42c72a128548296c308432c/bio-1.png?w=607&h=990&q=50&fm=png 607w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/7nCV7i4NBQYcINf8sW3d25/cd2f76dda42c72a128548296c308432c/bio-1.png?w=1215&h=1981&q=50&fm=png 1215w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/7nCV7i4NBQYcINf8sW3d25/cd2f76dda42c72a128548296c308432c/bio-1.png?w=2429&h=3961&q=50&fm=png 2429w",
+                "src": "/cms/bio-1.png?w=2429&h=3961&q=50&fm=png",
+                "srcSet": "/cms/bio-1.png?w=607&h=990&q=50&fm=png 607w,\n/cms/bio-1.png?w=1215&h=1981&q=50&fm=png 1215w,\n/cms/bio-1.png?w=2429&h=3961&q=50&fm=png 2429w",
                 "sizes": "(min-width: 2429px) 2429px, 100vw"
             }
         },

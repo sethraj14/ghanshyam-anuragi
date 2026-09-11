@@ -30,15 +30,15 @@ const rasoi_1 = {
       sources: [
         {
           srcSet:
-            "https://images.ctfassets.net/d5ql4rml3t6t/3jwMPzNptR5bEV32rTjJI5/70180f00a7fb6790b078dcdda1fe4443/rasoi_1.jpg?w=240&h=181&q=50&fm=webp 240w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/3jwMPzNptR5bEV32rTjJI5/70180f00a7fb6790b078dcdda1fe4443/rasoi_1.jpg?w=480&h=361&q=50&fm=webp 480w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/3jwMPzNptR5bEV32rTjJI5/70180f00a7fb6790b078dcdda1fe4443/rasoi_1.jpg?w=960&h=722&q=50&fm=webp 960w",
+            "/cms/rasoi_1.jpg?w=240&h=181&q=50&fm=webp 240w,\n/cms/rasoi_1.jpg?w=480&h=361&q=50&fm=webp 480w,\n/cms/rasoi_1.jpg?w=960&h=722&q=50&fm=webp 960w",
           sizes: "(min-width: 960px) 960px, 100vw",
           type: "image/webp",
         },
       ],
       fallback: {
-        src: "https://images.ctfassets.net/d5ql4rml3t6t/3jwMPzNptR5bEV32rTjJI5/70180f00a7fb6790b078dcdda1fe4443/rasoi_1.jpg?w=960&h=722&fl=progressive&q=50&fm=jpg",
+        src: "/cms/rasoi_1.jpg?w=960&h=722&fl=progressive&q=50&fm=jpg",
         srcSet:
-          "https://images.ctfassets.net/d5ql4rml3t6t/3jwMPzNptR5bEV32rTjJI5/70180f00a7fb6790b078dcdda1fe4443/rasoi_1.jpg?w=240&h=181&fl=progressive&q=50&fm=jpg 240w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/3jwMPzNptR5bEV32rTjJI5/70180f00a7fb6790b078dcdda1fe4443/rasoi_1.jpg?w=480&h=361&fl=progressive&q=50&fm=jpg 480w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/3jwMPzNptR5bEV32rTjJI5/70180f00a7fb6790b078dcdda1fe4443/rasoi_1.jpg?w=960&h=722&fl=progressive&q=50&fm=jpg 960w",
+          "/cms/rasoi_1.jpg?w=240&h=181&fl=progressive&q=50&fm=jpg 240w,\n/cms/rasoi_1.jpg?w=480&h=361&fl=progressive&q=50&fm=jpg 480w,\n/cms/rasoi_1.jpg?w=960&h=722&fl=progressive&q=50&fm=jpg 960w",
         sizes: "(min-width: 960px) 960px, 100vw",
       },
     },
@@ -55,15 +55,15 @@ const rasoi_2 = {
       sources: [
         {
           srcSet:
-            "https://images.ctfassets.net/d5ql4rml3t6t/36SInHlHl4fTXQoZVq539a/25e73f61453eedcfbe74fd446edc6717/rasoi_2.jpg?w=512&h=385&q=50&fm=webp 512w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/36SInHlHl4fTXQoZVq539a/25e73f61453eedcfbe74fd446edc6717/rasoi_2.jpg?w=1024&h=770&q=50&fm=webp 1024w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/36SInHlHl4fTXQoZVq539a/25e73f61453eedcfbe74fd446edc6717/rasoi_2.jpg?w=2048&h=1540&q=50&fm=webp 2048w",
+            "/cms/rasoi_2.jpg?w=512&h=385&q=50&fm=webp 512w,\n/cms/rasoi_2.jpg?w=1024&h=770&q=50&fm=webp 1024w,\n/cms/rasoi_2.jpg?w=2048&h=1540&q=50&fm=webp 2048w",
           sizes: "(min-width: 2048px) 2048px, 100vw",
           type: "image/webp",
         },
       ],
       fallback: {
-        src: "https://images.ctfassets.net/d5ql4rml3t6t/36SInHlHl4fTXQoZVq539a/25e73f61453eedcfbe74fd446edc6717/rasoi_2.jpg?w=2048&h=1540&fl=progressive&q=50&fm=jpg",
+        src: "/cms/rasoi_2.jpg?w=2048&h=1540&fl=progressive&q=50&fm=jpg",
         srcSet:
-          "https://images.ctfassets.net/d5ql4rml3t6t/36SInHlHl4fTXQoZVq539a/25e73f61453eedcfbe74fd446edc6717/rasoi_2.jpg?w=512&h=385&fl=progressive&q=50&fm=jpg 512w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/36SInHlHl4fTXQoZVq539a/25e73f61453eedcfbe74fd446edc6717/rasoi_2.jpg?w=1024&h=770&fl=progressive&q=50&fm=jpg 1024w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/36SInHlHl4fTXQoZVq539a/25e73f61453eedcfbe74fd446edc6717/rasoi_2.jpg?w=2048&h=1540&fl=progressive&q=50&fm=jpg 2048w",
+          "/cms/rasoi_2.jpg?w=512&h=385&fl=progressive&q=50&fm=jpg 512w,\n/cms/rasoi_2.jpg?w=1024&h=770&fl=progressive&q=50&fm=jpg 1024w,\n/cms/rasoi_2.jpg?w=2048&h=1540&fl=progressive&q=50&fm=jpg 2048w",
         sizes: "(min-width: 2048px) 2048px, 100vw",
       },
     },
@@ -81,15 +81,15 @@ const rasoi_3 = {
       sources: [
         {
           srcSet:
-            "https://images.ctfassets.net/d5ql4rml3t6t/2o7TihlyIkjW1nVbFBGKdj/636f514e2523cca5042c2442d7eb6245/rasoi_3.jpg?w=320&h=147&q=50&fm=webp 320w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/2o7TihlyIkjW1nVbFBGKdj/636f514e2523cca5042c2442d7eb6245/rasoi_3.jpg?w=640&h=294&q=50&fm=webp 640w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/2o7TihlyIkjW1nVbFBGKdj/636f514e2523cca5042c2442d7eb6245/rasoi_3.jpg?w=1280&h=588&q=50&fm=webp 1280w",
+            "/cms/rasoi_3.jpg?w=320&h=147&q=50&fm=webp 320w,\n/cms/rasoi_3.jpg?w=640&h=294&q=50&fm=webp 640w,\n/cms/rasoi_3.jpg?w=1280&h=588&q=50&fm=webp 1280w",
           sizes: "(min-width: 1280px) 1280px, 100vw",
           type: "image/webp",
         },
       ],
       fallback: {
-        src: "https://images.ctfassets.net/d5ql4rml3t6t/2o7TihlyIkjW1nVbFBGKdj/636f514e2523cca5042c2442d7eb6245/rasoi_3.jpg?w=1280&h=588&fl=progressive&q=50&fm=jpg",
+        src: "/cms/rasoi_3.jpg?w=1280&h=588&fl=progressive&q=50&fm=jpg",
         srcSet:
-          "https://images.ctfassets.net/d5ql4rml3t6t/2o7TihlyIkjW1nVbFBGKdj/636f514e2523cca5042c2442d7eb6245/rasoi_3.jpg?w=320&h=147&fl=progressive&q=50&fm=jpg 320w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/2o7TihlyIkjW1nVbFBGKdj/636f514e2523cca5042c2442d7eb6245/rasoi_3.jpg?w=640&h=294&fl=progressive&q=50&fm=jpg 640w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/2o7TihlyIkjW1nVbFBGKdj/636f514e2523cca5042c2442d7eb6245/rasoi_3.jpg?w=1280&h=588&fl=progressive&q=50&fm=jpg 1280w",
+          "/cms/rasoi_3.jpg?w=320&h=147&fl=progressive&q=50&fm=jpg 320w,\n/cms/rasoi_3.jpg?w=640&h=294&fl=progressive&q=50&fm=jpg 640w,\n/cms/rasoi_3.jpg?w=1280&h=588&fl=progressive&q=50&fm=jpg 1280w",
         sizes: "(min-width: 1280px) 1280px, 100vw",
       },
     },
@@ -107,15 +107,15 @@ const rasoi_4 = {
       sources: [
         {
           srcSet:
-            "https://images.ctfassets.net/d5ql4rml3t6t/5EVs6Ds7FdtCJvw0GjBxHO/31f10992dbcccb7435492a358a8e9d9f/rasoi_4.jpg?w=512&h=385&q=50&fm=webp 512w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/5EVs6Ds7FdtCJvw0GjBxHO/31f10992dbcccb7435492a358a8e9d9f/rasoi_4.jpg?w=1024&h=770&q=50&fm=webp 1024w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/5EVs6Ds7FdtCJvw0GjBxHO/31f10992dbcccb7435492a358a8e9d9f/rasoi_4.jpg?w=2048&h=1540&q=50&fm=webp 2048w",
+            "/cms/rasoi_4.jpg?w=512&h=385&q=50&fm=webp 512w,\n/cms/rasoi_4.jpg?w=1024&h=770&q=50&fm=webp 1024w,\n/cms/rasoi_4.jpg?w=2048&h=1540&q=50&fm=webp 2048w",
           sizes: "(min-width: 2048px) 2048px, 100vw",
           type: "image/webp",
         },
       ],
       fallback: {
-        src: "https://images.ctfassets.net/d5ql4rml3t6t/5EVs6Ds7FdtCJvw0GjBxHO/31f10992dbcccb7435492a358a8e9d9f/rasoi_4.jpg?w=2048&h=1540&fl=progressive&q=50&fm=jpg",
+        src: "/cms/rasoi_4.jpg?w=2048&h=1540&fl=progressive&q=50&fm=jpg",
         srcSet:
-          "https://images.ctfassets.net/d5ql4rml3t6t/5EVs6Ds7FdtCJvw0GjBxHO/31f10992dbcccb7435492a358a8e9d9f/rasoi_4.jpg?w=512&h=385&fl=progressive&q=50&fm=jpg 512w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/5EVs6Ds7FdtCJvw0GjBxHO/31f10992dbcccb7435492a358a8e9d9f/rasoi_4.jpg?w=1024&h=770&fl=progressive&q=50&fm=jpg 1024w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/5EVs6Ds7FdtCJvw0GjBxHO/31f10992dbcccb7435492a358a8e9d9f/rasoi_4.jpg?w=2048&h=1540&fl=progressive&q=50&fm=jpg 2048w",
+          "/cms/rasoi_4.jpg?w=512&h=385&fl=progressive&q=50&fm=jpg 512w,\n/cms/rasoi_4.jpg?w=1024&h=770&fl=progressive&q=50&fm=jpg 1024w,\n/cms/rasoi_4.jpg?w=2048&h=1540&fl=progressive&q=50&fm=jpg 2048w",
         sizes: "(min-width: 2048px) 2048px, 100vw",
       },
     },
@@ -133,15 +133,15 @@ const rasoi_5 = {
       sources: [
         {
           srcSet:
-            "https://images.ctfassets.net/d5ql4rml3t6t/5DwCWPkukf19FhrHTcpIJr/cbcd4b6c18dbcdb7433d8f6375fb0991/rasoi_5.jpg?w=512&h=385&q=50&fm=webp 512w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/5DwCWPkukf19FhrHTcpIJr/cbcd4b6c18dbcdb7433d8f6375fb0991/rasoi_5.jpg?w=1024&h=770&q=50&fm=webp 1024w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/5DwCWPkukf19FhrHTcpIJr/cbcd4b6c18dbcdb7433d8f6375fb0991/rasoi_5.jpg?w=2048&h=1540&q=50&fm=webp 2048w",
+            "/cms/rasoi_5.jpg?w=512&h=385&q=50&fm=webp 512w,\n/cms/rasoi_5.jpg?w=1024&h=770&q=50&fm=webp 1024w,\n/cms/rasoi_5.jpg?w=2048&h=1540&q=50&fm=webp 2048w",
           sizes: "(min-width: 2048px) 2048px, 100vw",
           type: "image/webp",
         },
       ],
       fallback: {
-        src: "https://images.ctfassets.net/d5ql4rml3t6t/5DwCWPkukf19FhrHTcpIJr/cbcd4b6c18dbcdb7433d8f6375fb0991/rasoi_5.jpg?w=2048&h=1540&fl=progressive&q=50&fm=jpg",
+        src: "/cms/rasoi_5.jpg?w=2048&h=1540&fl=progressive&q=50&fm=jpg",
         srcSet:
-          "https://images.ctfassets.net/d5ql4rml3t6t/5DwCWPkukf19FhrHTcpIJr/cbcd4b6c18dbcdb7433d8f6375fb0991/rasoi_5.jpg?w=512&h=385&fl=progressive&q=50&fm=jpg 512w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/5DwCWPkukf19FhrHTcpIJr/cbcd4b6c18dbcdb7433d8f6375fb0991/rasoi_5.jpg?w=1024&h=770&fl=progressive&q=50&fm=jpg 1024w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/5DwCWPkukf19FhrHTcpIJr/cbcd4b6c18dbcdb7433d8f6375fb0991/rasoi_5.jpg?w=2048&h=1540&fl=progressive&q=50&fm=jpg 2048w",
+          "/cms/rasoi_5.jpg?w=512&h=385&fl=progressive&q=50&fm=jpg 512w,\n/cms/rasoi_5.jpg?w=1024&h=770&fl=progressive&q=50&fm=jpg 1024w,\n/cms/rasoi_5.jpg?w=2048&h=1540&fl=progressive&q=50&fm=jpg 2048w",
         sizes: "(min-width: 2048px) 2048px, 100vw",
       },
     },
@@ -159,15 +159,15 @@ const rasoi_6 = {
       sources: [
         {
           srcSet:
-            "https://images.ctfassets.net/d5ql4rml3t6t/NNg898VTuwbnld5ohcDdC/8b204630b00beee1a878a0d17f230025/rasoi_6.jpg?w=320&h=213&q=50&fm=webp 320w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/NNg898VTuwbnld5ohcDdC/8b204630b00beee1a878a0d17f230025/rasoi_6.jpg?w=640&h=427&q=50&fm=webp 640w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/NNg898VTuwbnld5ohcDdC/8b204630b00beee1a878a0d17f230025/rasoi_6.jpg?w=1280&h=853&q=50&fm=webp 1280w",
+            "/cms/rasoi_6.jpg?w=320&h=213&q=50&fm=webp 320w,\n/cms/rasoi_6.jpg?w=640&h=427&q=50&fm=webp 640w,\n/cms/rasoi_6.jpg?w=1280&h=853&q=50&fm=webp 1280w",
           sizes: "(min-width: 1280px) 1280px, 100vw",
           type: "image/webp",
         },
       ],
       fallback: {
-        src: "https://images.ctfassets.net/d5ql4rml3t6t/NNg898VTuwbnld5ohcDdC/8b204630b00beee1a878a0d17f230025/rasoi_6.jpg?w=1280&h=853&fl=progressive&q=50&fm=jpg",
+        src: "/cms/rasoi_6.jpg?w=1280&h=853&fl=progressive&q=50&fm=jpg",
         srcSet:
-          "https://images.ctfassets.net/d5ql4rml3t6t/NNg898VTuwbnld5ohcDdC/8b204630b00beee1a878a0d17f230025/rasoi_6.jpg?w=320&h=213&fl=progressive&q=50&fm=jpg 320w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/NNg898VTuwbnld5ohcDdC/8b204630b00beee1a878a0d17f230025/rasoi_6.jpg?w=640&h=427&fl=progressive&q=50&fm=jpg 640w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/NNg898VTuwbnld5ohcDdC/8b204630b00beee1a878a0d17f230025/rasoi_6.jpg?w=1280&h=853&fl=progressive&q=50&fm=jpg 1280w",
+          "/cms/rasoi_6.jpg?w=320&h=213&fl=progressive&q=50&fm=jpg 320w,\n/cms/rasoi_6.jpg?w=640&h=427&fl=progressive&q=50&fm=jpg 640w,\n/cms/rasoi_6.jpg?w=1280&h=853&fl=progressive&q=50&fm=jpg 1280w",
         sizes: "(min-width: 1280px) 1280px, 100vw",
       },
     },
@@ -195,15 +195,15 @@ export const image = {
       sources: [
         {
           srcSet:
-            "https://images.ctfassets.net/d5ql4rml3t6t/24pDVWYAGqV18dKDuEdFvb/e15ba713f75c597250652389bad7a78b/image_-_Edited.png?w=100&h=92&q=50&fm=webp 100w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/24pDVWYAGqV18dKDuEdFvb/e15ba713f75c597250652389bad7a78b/image_-_Edited.png?w=200&h=184&q=50&fm=webp 200w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/24pDVWYAGqV18dKDuEdFvb/e15ba713f75c597250652389bad7a78b/image_-_Edited.png?w=400&h=368&q=50&fm=webp 400w",
+            "/cms/image_-_Edited.png?w=100&h=92&q=50&fm=webp 100w,\n/cms/image_-_Edited.png?w=200&h=184&q=50&fm=webp 200w,\n/cms/image_-_Edited.png?w=400&h=368&q=50&fm=webp 400w",
           sizes: "(min-width: 400px) 400px, 100vw",
           type: "image/webp",
         },
       ],
       fallback: {
-        src: "https://images.ctfassets.net/d5ql4rml3t6t/24pDVWYAGqV18dKDuEdFvb/e15ba713f75c597250652389bad7a78b/image_-_Edited.png?w=400&h=368&q=50&fm=png",
+        src: "/cms/image_-_Edited.png?w=400&h=368&q=50&fm=png",
         srcSet:
-          "https://images.ctfassets.net/d5ql4rml3t6t/24pDVWYAGqV18dKDuEdFvb/e15ba713f75c597250652389bad7a78b/image_-_Edited.png?w=100&h=92&q=50&fm=png 100w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/24pDVWYAGqV18dKDuEdFvb/e15ba713f75c597250652389bad7a78b/image_-_Edited.png?w=200&h=184&q=50&fm=png 200w,\nhttps://images.ctfassets.net/d5ql4rml3t6t/24pDVWYAGqV18dKDuEdFvb/e15ba713f75c597250652389bad7a78b/image_-_Edited.png?w=400&h=368&q=50&fm=png 400w",
+          "/cms/image_-_Edited.png?w=100&h=92&q=50&fm=png 100w,\n/cms/image_-_Edited.png?w=200&h=184&q=50&fm=png 200w,\n/cms/image_-_Edited.png?w=400&h=368&q=50&fm=png 400w",
         sizes: "(min-width: 400px) 400px, 100vw",
       },
     },
