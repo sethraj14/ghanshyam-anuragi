@@ -6,7 +6,7 @@ import Timeline from "../components/Timeline.astro";
 import PhotoGrid from "../components/PhotoGrid.astro";
 import VideoGrid from "../components/VideoGrid.astro";
 import ContactBlock from "../components/ContactBlock.astro";
-import { person, contact, biography, rasoi, homeVideos, galleryList, mediaList } from "../data/site";
+import { person, contact, biography, rasoi, facts, homeVideos, galleryList, mediaList } from "../data/site";
 import hero from "../assets/bio-1.png";
 import portraitBio from "../assets/portrait-bio.png";
 import rasoiPhoto from "../assets/rasoi_6.jpg";
@@ -18,9 +18,10 @@ const pick = (list: { src: string }[], all: Record<string, ImageMetadata>, n: nu
 ---
 
 <Base sky>
-  <section class="relative mx-auto max-w-6xl px-4 pt-6 sm:pt-16 grid gap-6 sm:grid-cols-2 sm:items-end border-b border-saffron/30">
-    <div class="relative order-first sm:order-last justify-self-center flex items-end">
-      <span class="bloom absolute inset-x-4 top-10 bottom-6 rounded-full bg-saffron/50 blur-3xl" aria-hidden="true"></span>
+  <section class="relative mx-auto max-w-6xl px-4 pt-6 sm:pt-14 grid gap-2 sm:gap-6 sm:grid-cols-2 sm:items-end">
+    <div class="relative order-first sm:order-last justify-self-center flex items-end justify-center">
+      <span class="bloom absolute top-0 left-1/2 -translate-x-1/2 aspect-square w-64 sm:w-sm lg:w-lg rounded-full bg-gradient-to-b from-saffron/45 via-gold/30 to-transparent ring-1 ring-saffron/25" aria-hidden="true"></span>
+      <span class="absolute bottom-3 left-1/2 -translate-x-1/2 h-3 w-28 sm:h-5 sm:w-56 rounded-full bg-ink/20 blur-sm sm:blur-md" aria-hidden="true"></span>
       <Image
         src={hero}
         alt={person.name}
@@ -28,10 +29,10 @@ const pick = (list: { src: string }[], all: Record<string, ImageMetadata>, n: nu
         sizes="(min-width: 1024px) 28rem, (min-width: 640px) 40vw, 70vw"
         loading="eager"
         fetchpriority="high"
-        class="rise relative w-56 sm:w-sm lg:w-md h-auto drop-shadow-2xl"
+        class="rise relative w-56 sm:w-sm lg:w-md h-auto"
       />
     </div>
-    <div class="text-center sm:text-left pb-10 sm:pb-20">
+    <div class="text-center sm:text-left pb-8 sm:pb-24">
       <h1 class="rise rise-2 text-4xl sm:text-5xl lg:text-7xl font-extrabold text-ink">{person.name}</h1>
       <p class="rise rise-3 mt-3 text-xl sm:text-2xl font-display font-bold text-saffron-deep">{person.roles[0]}</p>
       <p class="rise rise-3 text-xl sm:text-2xl font-display font-bold text-ink">{person.roles[1]}</p>
@@ -42,14 +43,28 @@ const pick = (list: { src: string }[], all: Record<string, ImageMetadata>, n: nu
     </div>
   </section>
 
-  <section class="mx-auto max-w-6xl px-4 py-10">
-    <div class="rounded-3xl bg-white/80 border border-ink/10 p-6 sm:p-10 grid gap-6 sm:grid-cols-[1fr_260px] items-center">
-      <div>
-        <h2 class="text-2xl sm:text-3xl font-extrabold">{biography[0][0]}</h2>
-        <p class="mt-4 text-lg leading-relaxed text-ink-2">{biography[1][0]}</p>
-        <a href="/about" class="inline-flex items-center h-11 mt-5 px-5 rounded-full bg-saffron text-white font-semibold">पूरी जीवनी</a>
+  <section class="border-y border-saffron/20 bg-white/50">
+    <dl class="mx-auto max-w-6xl px-4 py-5 grid grid-cols-3 divide-x divide-saffron/20 text-center">
+      {facts.map((f) => (
+        <div class="px-2">
+          <dd class="font-display font-extrabold text-xl sm:text-4xl text-saffron-deep whitespace-nowrap">{f.value}</dd>
+          <dt class="mt-1 text-sm sm:text-base text-ink-2 leading-snug">{f.label}</dt>
+        </div>
+      ))}
+    </dl>
+  </section>
+
+  <section class="mx-auto max-w-6xl px-4 py-12 sm:py-16 grid gap-8 sm:grid-cols-[280px_1fr] sm:items-start">
+    <div class="justify-self-center sm:justify-self-start">
+      <div class="w-48 sm:w-full aspect-[4/5] rounded-t-full rounded-b-3xl overflow-hidden bg-saffron/15 ring-1 ring-saffron/25">
+        <Image src={portraitBio} alt="" widths={[280, 560]} sizes="280px" class="w-full h-full object-cover object-top" />
       </div>
-      <Image src={portraitBio} alt="" widths={[260, 520]} sizes="260px" class="w-40 sm:w-full h-auto justify-self-center rounded-2xl" />
+    </div>
+    <div class="max-w-2xl">
+      <h2 class="text-3xl sm:text-4xl font-extrabold">{biography[0][0]}</h2>
+      <p class="mt-5 text-xl sm:text-2xl leading-relaxed font-display text-ink">{biography[1][0].split("।")[0]}।</p>
+      <p class="mt-4 text-lg leading-relaxed text-ink-2">{biography[1][0].split("।").slice(1).join("।").trim()}</p>
+      <a href="/about" class="inline-flex items-center h-11 mt-6 px-5 rounded-full bg-ink text-paper font-semibold">पूरी जीवनी पढ़ें</a>
     </div>
   </section>
 
@@ -71,7 +86,15 @@ const pick = (list: { src: string }[], all: Record<string, ImageMetadata>, n: nu
 
   <section class="mx-auto max-w-6xl px-4 py-10">
     <SectionHead title="तस्वीरें" href="/gallery" />
-    <PhotoGrid images={pick(galleryList, gallery, 6)} columns="columns-2 sm:columns-3" />
+    <div class="grid grid-cols-2 sm:grid-cols-4 gap-3">
+      {pick(galleryList, gallery, 5).map((img, i) => (
+        <a href={img.src} aria-label="तस्वीर बड़ी देखें" data-photo
+          class:list={["block rounded-2xl overflow-hidden bg-paper-2", i === 0 && "col-span-2 row-span-2"]}>
+          <Image src={img} alt="" widths={[360, 640, 900]} sizes={i === 0 ? "(min-width: 640px) 50vw, 100vw" : "(min-width: 640px) 25vw, 50vw"} quality={65}
+            class="w-full h-full object-cover aspect-square" />
+        </a>
+      ))}
+    </div>
   </section>
 
   <section class="mx-auto max-w-6xl px-4 py-10">

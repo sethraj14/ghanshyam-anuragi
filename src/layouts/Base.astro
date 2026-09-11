@@ -90,18 +90,20 @@ const path = Astro.url.pathname.replace(/\/$/, "") || "/";
 <style>
   .sky {
     background:
-      radial-gradient(60% 40% at 50% 0%, rgba(242, 107, 29, 0.55), transparent 70%),
-      linear-gradient(180deg, #f9c9a6 0%, #fbf7f0 60vh);
+      radial-gradient(70% 45% at 20% 0%, rgba(242, 107, 29, 0.55), transparent 70%),
+      radial-gradient(50% 40% at 85% 10%, rgba(217, 164, 65, 0.45), transparent 70%),
+      linear-gradient(180deg, #f8c7a3 0%, #fbe9d6 45vh, #fbf7f0 80vh);
     position: relative;
   }
-  /* Paper grain over the sky so the canvas is not a flat gradient. */
+  /* Paper grain over the sky, fading out so it has no edge. */
   .sky::before {
     content: "";
     position: absolute;
     inset: 0;
-    height: 60vh;
+    height: 90vh;
     pointer-events: none;
-    opacity: 0.18;
+    opacity: 0.16;
+    mask-image: linear-gradient(to bottom, #000 55%, transparent);
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.5 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
   #lightbox { max-width: 96vw; max-height: 96dvh; }

@@ -46,6 +46,13 @@ export const timeline = [
   { year: 2021, text: "मनोनीत कार्यकारी राष्ट्रीय अध्यक्ष, अखिल भारतीय कोली (कोरी) समाज" },
 ];
 
+// Three facts from the biography text, nothing invented.
+export const facts = [
+  { value: "1995 से", label: "जन प्रतिनिधि" },
+  { value: "800–900", label: "लोगों को रोज़ भोजन, अपनी रसोई" },
+  { value: "2022", label: "पं. दीनदयाल उपाध्याय राष्ट्रीय पुरस्कार" },
+];
+
 export const rasoi = {
   slogan: ["घनश्याम अनुरागी ने ठाना है", "हर भूखे को भोजन खिलाना है"],
   // First paragraph is the Chanakya shloka (two lines).
