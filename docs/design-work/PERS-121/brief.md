@@ -57,8 +57,8 @@ Rajdeep delegated the pick this session ("you can be the designer… I can revie
 
 ## Implementation contract
 - Canonical: this brief + the build on `feat/astro-rebuild`. Viewports 390 / 768 / 1280.
-- Tokens: paper `#FBF7F0`, ink `#1B1A17`, saffron `#F26B1D`, deep saffron `#B8430F`, green `#1E7A4C` (tricolour rule only), gold `#D9A441` (seals only). Display Martel 800, body Mukta 400/500/600. Google Fonts with `display=swap`.
-- States: every page has content (no empty states); videos `preload="metadata"` on Home, `none` on the Videos page; images lazy below the fold with width/height set.
+- Tokens: paper `#FBF7F0`, ink `#1B1A17`, saffron `#F26B1D`, deep saffron `#B8430F`, green `#1E7A4C` (tricolour rule only), gold `#D9A441` (seals only). Display Martel 700/800, body Mukta 400/600, self-hosted via fontsource (Devanagari + Latin), fold fonts preloaded.
+- States: every page has content (no empty states); videos are poster images that swap to a player on tap (no video bytes before a tap); images lazy below the fold with width/height set.
 - Accessibility: focus rings visible, Hindi `lang="hi"`, alt text from captions where they exist, otherwise decorative.
 - Motion: CSS only; `prefers-reduced-motion` disables the load choreography and scroll-snap smoothness.
 - Non-goals as above.
